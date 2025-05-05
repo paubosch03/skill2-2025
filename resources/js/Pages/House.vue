@@ -1,12 +1,12 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import axios from 'axios'; // Make sure axios is installed (npm install axios)
+import axios from 'axios';
 
 // --- Reactive State ---
-const houses = ref([]); // Holds the list of houses displayed in the table
-const showAddModal = ref(false); // Controls visibility of the add modal
-const editingHouse = ref(null); // Holds the house object being edited, or null
-const formHouseData = ref({ // Holds data for the add/edit form
+const houses = ref([]);
+const showAddModal = ref(false);
+const editingHouse = ref(null);
+const formHouseData = ref({
     id: null,
     address: '',
     city: '',
@@ -16,7 +16,7 @@ const formHouseData = ref({ // Holds data for the add/edit form
 
 // --- Lifecycle Hook ---
 onMounted(() => {
-    fetchHouses(); // Load initial data when the component is mounted
+    fetchHouses();
 });
 
 // --- Methods ---
@@ -24,38 +24,33 @@ onMounted(() => {
 // Fetch all houses from the API
 const fetchHouses = async () => {
     try {
-        // Adjust '/houses' to your actual API endpoint for getting all houses
+
         const response = await axios.get('/houses');
-        houses.value = response.data; // Update the reactive array
+        houses.value = response.data;
     } catch (error) {
         console.error('Error fetching houses:', error);
-        // Add user feedback here (e.g., show an error message)
     }
 };
 
 // Prepare and show the modal for adding a new house
 const openAddModal = () => {
-    editingHouse.value = null; // Ensure we are not in edit mode
-    // Reset form data for a new entry
+    editingHouse.value = null;
     formHouseData.value = { id: null, address: '', city: '', zip_code: '', country: '' };
     showAddModal.value = true;
 };
 
-// Prepare and show the modal for editing an existing house
 const openEditModal = (house) => {
-    editingHouse.value = house; // Store the house being edited
-    // Populate form with the existing house data
-    formHouseData.value = { ...house }; // Use spread syntax to copy data
-    showAddModal.value = false; // Ensure add modal flag is false if reusing modal logic
-    // If using a separate edit modal flag, set it here.
-    // For simplicity, this example reuses the editingHouse ref to control modal state/content.
+    editingHouse.value = house;
+
+    formHouseData.value = { ...house };
+    showAddModal.value = false;
+
 };
 
 // Close the add/edit modal
 const closeModal = () => {
     showAddModal.value = false;
     editingHouse.value = null;
-    // Consider resetting formHouseData here as well if needed
 };
 
 // Save (Create or Update) a house
@@ -64,16 +59,13 @@ const saveHouse = async () => {
         // --- Update existing house ---
         try {
             const houseId = editingHouse.value.id;
-            // Adjust '/house/{id}' to your actual API endpoint for updating
             const response = await axios.put(`/house/${houseId}`, formHouseData.value);
 
             if (response.status === 200) {
-                // Find the index of the updated house in the array
                 const index = houses.value.findIndex(h => h.id === houseId);
                 if (index !== -1) {
-                    // Update the house in the local array with the response data
-                    // (or formHouseData if the API doesn't return the updated object)
-                    houses.value[index] = response.data; // Or use { ...formHouseData.value }
+
+                    houses.value[index] = response.data;
                 }
                 closeModal();
             } else {
@@ -81,21 +73,15 @@ const saveHouse = async () => {
             }
         } catch (error) {
             console.error(`Error updating house with ID ${editingHouse.value.id}:`, error);
-            // Add user feedback for error
         }
 
     } else {
         // --- Create new house ---
         try {
-            // Adjust '/house' to your actual API endpoint for creating
-            // Exclude 'id' if it shouldn't be sent for creation
-            // const payload = { ...formHouseData.value };
-            // delete payload.id;
 
             const response = await axios.post('/house', formHouseData.value);
 
             if (response.status === 201 || response.status === 200) {
-                // Add the newly created house (returned from API) to the list
                 houses.value.push(response.data);
                 closeModal();
             } else {
@@ -103,7 +89,6 @@ const saveHouse = async () => {
             }
         } catch (error) {
             console.error('Error adding house:', error);
-            // Add user feedback for error (e.g., display validation messages from error.response.data)
         }
     }
 };
@@ -216,10 +201,4 @@ const deleteHouse = async (houseToDelete) => {
 
     </div>
 </template>
-
-
-
-<style scoped>
-/* Add any component-specific styles here if needed */
-/* Tailwind classes are already applied in the template */
-</style>
+<style scoped></style>

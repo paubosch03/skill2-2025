@@ -35,27 +35,27 @@ const openAddModal = () => {
 };
 const openEditModal = (appliance) => {
     editingAppliance.value = { ...appliance };
-    formApplianceData.value = { ...appliance }; 
+    formApplianceData.value = { ...appliance };
     showEditModal.value = true;
 };
 const closeModals = () => {
     showAddModal.value = false;
     showEditModal.value = false;
 };
-const saveNewAppliance = async () => { 
-    try{
+const saveNewAppliance = async () => {
+    try {
         const response = await axios.post('/appliance', formApplianceData.value);
-        if(response.status === 200){
+        if (response.status === 200) {
             appliances.value.push(response.data)
             closeModals()
-        }else{
+        } else {
             console.warn('Appliance added, but received status:', response.status);
         }
-    }catch(error){
+    } catch (error) {
         console.error('Error adding Appliance:', error);
     }
 };
-const updateAppliance = async () => { 
+const updateAppliance = async () => {
     if (!editingAppliance.value) {
         console.error('No appliance selected for editing.');
         return;

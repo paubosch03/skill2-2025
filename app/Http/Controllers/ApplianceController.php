@@ -80,7 +80,13 @@ class ApplianceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $appliance = Appliances::find($id);
+        if ($appliance) {
+            $appliance->delete();
+            return response()->json(['message' => 'Electrodomesticos eliminado exitosamente.']);
+        }else{
+            return response()->json(['message' => 'Electrodomesticos no encontrado.']);
+        }
     }
     public function getAppliances()
     {

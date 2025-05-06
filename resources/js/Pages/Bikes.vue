@@ -1,8 +1,16 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import { defineProps } from 'vue'
 
-const bikes = ref([]);
+const props = defineProps({
+    bikes: {
+        type: Array,
+        required: true
+    }
+});
+const bikes = ref(props.bikes);
+const houses = ref([]);
 const showAddModal = ref(false);
 const showEditModal = ref(false);
 const editingBike = ref(null);
@@ -15,8 +23,10 @@ const formBikedata = ref({
     color: '',
     frame_material: '',
     speeds: '',
-    price: ''
+    price: '',
 });
+
+console.log(bikes.value);
 const openAddModal = () => {
     showAddModal.value = true;
 };
@@ -110,11 +120,12 @@ const deleteBike = async (bike) => {
                         <th class="py-2 px-2 sm:py-3 sm:px-4 border-b text-left">Material</th>
                         <th class="py-2 px-2 sm:py-3 sm:px-4 border-b text-left">Velocidades</th>
                         <th class="py-2 px-2 sm:py-3 sm:px-4 border-b text-left">Precio</th>
+                        <th class="py-2 px-2 sm:py-3 sm:px-4 border-b text-left">Casa</th>
                         <th class="py-2 px-2 sm:py-3 sm:px-4 border-b text-left">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="bike in bikes" :key="bike.id" class="hover:bg-gray-50">
+                    <tr v-for="bike in props.bikes" :key="bike.id" class="hover:bg-gray-50">
                         <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.brand }}</td>
                         <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.model }}</td>
                         <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.type }}</td>
@@ -122,6 +133,7 @@ const deleteBike = async (bike) => {
                         <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.frame_material }}</td>
                         <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.speeds }}</td>
                         <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.price }}</td>
+                        <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.houses.address }}</td>
                         <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">
                             <button @click="openEditModal(bike)" class="text-blue-500 hover:text-blue-700 mr-2">
                                 Editar

@@ -13,7 +13,9 @@ class BikesController extends Controller
      */
     public function index()
     {
-        $bikes = Bikes::all();
+        $bikes = Bikes::with('houses:id,address')->get();
+
+        // dd($bikes);
 
         if (request()->expectsJson()) {
             return response()->json(['bikes' => $bikes]);

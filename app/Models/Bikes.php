@@ -14,6 +14,11 @@ class Bikes extends Model
         'frame_material',
         'speeds',
         'price',
+        'houses_id',
     ];
     protected $table = 'bikes';
+    public function houses()
+    {
+        return $this->belongsTo(Houses::class, 'houses_id');
+    }
 }

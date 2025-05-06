@@ -133,7 +133,7 @@ const deleteBike = async (bike) => {
                         <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.frame_material }}</td>
                         <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.speeds }}</td>
                         <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.price }}</td>
-                        <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.houses.address }}</td>
+                        <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">{{ bike.houses?.address || 'Sin casa' }}</td>
                         <td class="py-2 px-2 sm:py-3 sm:px-4 border-b">
                             <button @click="openEditModal(bike)" class="text-blue-500 hover:text-blue-700 mr-2">
                                 Editar

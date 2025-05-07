@@ -83,4 +83,5 @@ Route::delete('/bike/{id}', [BikesController::class, 'destroy']);
 Route::resource('sport', SportsController::class);
 
 Route::resource('Athlete', AthletesController::class);
+Route::delete('/athlete/{id}', [AthletesController::class, 'destroy']);
 require __DIR__ . '/auth.php';

@@ -35,7 +35,7 @@
         Deportes:
         <button @click="goToCreateList"
             class="bg-[#2b72e6] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
-            Crear Deporte
+            Crear Atleta
         </button>
 
         <div>
@@ -61,7 +61,7 @@
                         <div class="flex gap-2">
                             <Link :href="route('Athlete.show', athlete.id)" class="text-[#0e55c9]">Ver</Link>
                             <Link :href="route('Athlete.edit', athlete.id)" class="text-[#0a0800]">Editar</Link>
-                            <button @click="deleteAthlete(athlete.id)" class="text-[#ba0f0f]">Eliminar</button>
+                            <button @click="deleteAthlete(athlete)" class="text-[#ba0f0f]">Eliminar</button>
                         </div>
                     </td>
                 </tr>
@@ -79,6 +79,7 @@
 <script setup>
 import { Head, Link, router } from '@inertiajs/vue3';
 import { ref, defineProps, computed } from 'vue';
+import axios from 'axios';
 
 const props = defineProps({
     athletes: Array,
@@ -124,17 +125,16 @@ function nextSlide() {
     if (carouselIndex.value < filteredAthletes.value.length - 1) carouselIndex.value++;
 }
 
-function deleteAthlete(id) {
-    router.delete(route('Athlete.destroy', id), {
-        preserveScroll: true,
-        onSuccess: () => {
-            athletes.value = athletes.value.filter(athlete => athlete.id !== id);
-            if (carouselIndex.value >= filteredAthletes.value.length) {
-                carouselIndex.value = Math.max(0, filteredAthletes.value.length - 1);
-            }
+const deleteAthlete = async (athlete) => {
+    try {
+        const response = await axios.delete(`/athlete/${athlete.id}`)
+        if (response.status === 200) {
+            athletes.value = athletes.value.filter(a => a.id !== athlete.id)
         }
-    });
-}
+    } catch (error) {
+        console.error(`Error deleting athlete with ID ${athlete.id}:`, error);
+    }
+};
 
 function goToCreateList() {
     router.visit('/Athlete/create');

@@ -84,9 +84,13 @@ class AthletesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Athletes $athlete)
+    public function destroy($id)
     {
-        $athlete->delete();
-        return redirect()->route('Athlete.index');
+        $athlete = Athletes::find($id);
+        if ($athlete) {
+            $athlete->delete();
+            return response()->json(['success' => true]);
+        }
+        return response()->json(['success' => false], 404);
     }
 }

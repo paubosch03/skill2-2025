@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('sports', function (Blueprint $table) {
             $table->id();
-            $table->varchar('name', 100);
-            $table->varchar('category', 100);
+            $table->string('name', 100);
+            $table->string('category', 100);
             $table->integer('players_per_team');
             $table->timestamps();
             $table->softDeletes();

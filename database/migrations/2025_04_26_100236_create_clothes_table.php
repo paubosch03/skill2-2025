@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('clothes', function (Blueprint $table) {
             $table->id();
-            $table->varchar('type', 50);
-            $table->varchar('brand', 50);
-            $table->varchar('color', 20);
-            $table->varchar('size', 10);
+            $table->string('type', 50);
+            $table->string('brand', 50);
+            $table->string('color', 20);
+            $table->string('size', 10);
             $table->decimal('price', 10, 2);  
-            $table->varchar('material', 50);
-            $table->varchar('gender', 10);
+            $table->string('material', 50);
+            $table->string('gender', 10);
             $table->timestamps();
             $table->softDeletes();
         });

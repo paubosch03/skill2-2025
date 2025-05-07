@@ -13,6 +13,7 @@ use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\WheelsController;
 use App\Http\Controllers\BikesController;
 use App\Http\Controllers\SportsController;
+use App\Http\Controllers\AthletesController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -80,4 +81,6 @@ Route::put('/bike/{id}', [BikesController::class, 'update']);
 Route::delete('/bike/{id}', [BikesController::class, 'destroy']);
 
 Route::resource('sport', SportsController::class);
+
+Route::resource('Athlete', AthletesController::class);
 require __DIR__ . '/auth.php';

@@ -228,7 +228,8 @@ import { Head } from '@inertiajs/vue3';
                                 </div>
                                 <h3 class="text-lg font-medium text-gray-800 mb-2">Bicicletas</h3>
                                 <p class="text-gray-500 text-sm flex-grow">Gestión de bicicletas</p>
-                                <span class="mt-4 inline-flex items-center text-green-600 group-hover:underline text-sm">
+                                <span
+                                    class="mt-4 inline-flex items-center text-green-600 group-hover:underline text-sm">
                                     Acceder
                                     <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -253,7 +254,34 @@ import { Head } from '@inertiajs/vue3';
                                 </div>
                                 <h3 class="text-lg font-medium text-gray-800 mb-2">Deportes</h3>
                                 <p class="text-gray-500 text-sm flex-grow">Gestión de deportes</p>
-                                <span class="mt-4 inline-flex items-center text-green-600 group-hover:underline text-sm">
+                                <span
+                                    class="mt-4 inline-flex items-center text-green-600 group-hover:underline text-sm">
+                                    Acceder
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                        <!-- Atletas -->
+                        <a href="/Athlete" class="group block transition-all duration-200 hover:scale-[1.02]">
+                            <div
+                                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md h-full flex flex-col">
+                                <div class="flex items-center mb-4">
+                                    <div class="bg-green-50 p-3 rounded-full">
+                                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4a6 6 0 110 12 6 6 0 010-12zm0 3a3 3 0 100 6 3 3 0 000-6z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-medium text-gray-800 mb-2">Atletas</h3>
+                                <p class="text-gray-500 text-sm flex-grow">Gestión de atletas</p>
+                                <span
+                                    class="mt-4 inline-flex items-center text-green-600 group-hover:underline text-sm">
                                     Acceder
                                     <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

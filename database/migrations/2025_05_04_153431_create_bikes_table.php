@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('bikes', function (Blueprint $table) {
             $table->id();
-            $table->varchar('brand', 100);
-            $table->varchar('model', 100);
-            $table->varchar('type', 100);
-            $table->varchar('color', 100);
-            $table->varchar('frame_material', 100);
+            $table->string('brand', 100);
+            $table->string('model', 100);
+            $table->string('type', 100);
+            $table->string('color', 100);
+            $table->string('frame_material', 100);
             $table->decimal('speeds', 10, 2);
             $table->decimal('price', 10, 2);
             $table->timestamps();

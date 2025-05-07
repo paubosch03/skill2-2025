@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('appliances', function (Blueprint $table) {
             $table->id();
-            $table->varchar('name',200);
-            $table->varchar('brand',200);
+            $table->string('name',200);
+            $table->string('brand',200);
             $table->string('price');
             $table->string('power');
             $table->softDeletes();

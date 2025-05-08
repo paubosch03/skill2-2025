@@ -2,6 +2,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import Navbar from '@/Components/Navbar.vue'
+import Footer from '@/Components/Footer.vue';
 </script>
 
 <template>
@@ -86,11 +87,12 @@ import Navbar from '@/Components/Navbar.vue'
 
                         <!-- House -->
                         <a href="/House" class="group block transition-all duration-200 hover:scale-[1.02]">
-                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md h-full flex flex-col">
+                            <div
+                                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md h-full flex flex-col">
                                 <div class="flex items-center mb-4">
                                     <div class="bg-teal-50 p-3 rounded-full">
-                                        <svg class="w-6 h-6" :style="{ color: '#008579' }" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
+                                        <svg class="w-6 h-6" :style="{ color: '#008579' }" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                                             </path>
@@ -99,9 +101,11 @@ import Navbar from '@/Components/Navbar.vue'
                                 </div>
                                 <h3 class="text-lg font-medium text-gray-800 mb-2">Inmuebles</h3>
                                 <p class="text-gray-500 text-sm flex-grow">Gestión de propiedades y viviendas</p>
-                                <span class="mt-4 inline-flex items-center group-hover:underline text-sm" :style="{ color: '#008579' }">
+                                <span class="mt-4 inline-flex items-center group-hover:underline text-sm"
+                                    :style="{ color: '#008579' }">
                                     Acceder
-                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" :style="{ color: '#008579' }">
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        :style="{ color: '#008579' }">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M9 5l7 7-7 7">
                                         </path>
@@ -204,9 +208,11 @@ import Navbar from '@/Components/Navbar.vue'
                                 </div>
                                 <h3 class="text-lg font-medium text-gray-800 mb-2">Ruedas</h3>
                                 <p class="text-gray-500 text-sm flex-grow">Gestión de Ruedas</p>
-                                <span class="mt-4 inline-flex items-center group-hover:underline text-sm" :style="{ color: '#008933' }">
+                                <span class="mt-4 inline-flex items-center group-hover:underline text-sm"
+                                    :style="{ color: '#008933' }">
                                     Acceder
-                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" :style="{ color: '#008933' }">
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        :style="{ color: '#008933' }">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M9 5l7 7-7 7">
                                         </path>
@@ -221,8 +227,8 @@ import Navbar from '@/Components/Navbar.vue'
                                 class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md h-full flex flex-col">
                                 <div class="flex items-center mb-4">
                                     <div class="bg-green-50 p-3 rounded-full">
-                                        <svg class="w-6 h-6" :style="{ color: '#008933' }" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
+                                        <svg class="w-6 h-6" :style="{ color: '#008933' }" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M5 17a4 4 0 100-8 4 4 0 000 8zm14 0a4 4 0 100-8 4 4 0 000 8zM5 17l4-4m0 0l4 4m-4-4l4-4m6 8h-3m-3-4h3l3-3" />
                                         </svg>
@@ -230,9 +236,11 @@ import Navbar from '@/Components/Navbar.vue'
                                 </div>
                                 <h3 class="text-lg font-medium text-gray-800 mb-2">Bicicletas</h3>
                                 <p class="text-gray-500 text-sm flex-grow">Gestión de bicicletas</p>
-                                <span class="mt-4 inline-flex items-center group-hover:underline text-sm" :style="{ color: '#008933' }">
+                                <span class="mt-4 inline-flex items-center group-hover:underline text-sm"
+                                    :style="{ color: '#008933' }">
                                     Acceder
-                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" :style="{ color: '#008933' }">
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        :style="{ color: '#008933' }">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M9 5l7 7-7 7">
                                         </path>
@@ -246,8 +254,8 @@ import Navbar from '@/Components/Navbar.vue'
                                 class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md h-full flex flex-col">
                                 <div class="flex items-center mb-4">
                                     <div class="bg-green-50 p-3 rounded-full">
-                                        <svg class="w-6 h-6" :style="{ color: '#008933' }" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
+                                        <svg class="w-6 h-6" :style="{ color: '#008933' }" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4a6 6 0 110 12 6 6 0 010-12zm0 3a3 3 0 100 6 3 3 0 000-6z" />
                                         </svg>
@@ -255,9 +263,11 @@ import Navbar from '@/Components/Navbar.vue'
                                 </div>
                                 <h3 class="text-lg font-medium text-gray-800 mb-2">Deportes</h3>
                                 <p class="text-gray-500 text-sm flex-grow">Gestión de deportes</p>
-                                <span class="mt-4 inline-flex items-center group-hover:underline text-sm" :style="{ color: '#008933' }">
+                                <span class="mt-4 inline-flex items-center group-hover:underline text-sm"
+                                    :style="{ color: '#008933' }">
                                     Acceder
-                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" :style="{ color: '#008933' }">
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        :style="{ color: '#008933' }">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M9 5l7 7-7 7">
                                         </path>
@@ -271,18 +281,44 @@ import Navbar from '@/Components/Navbar.vue'
                                 class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md h-full flex flex-col">
                                 <div class="flex items-center mb-4">
                                     <div class="bg-green-50 p-3 rounded-full">
-                                        <svg class="w-6 h-6" :style="{ color: '#008933' }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-6 h-6" :style="{ color: '#008933' }" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
                                             <!-- ... -->
                                         </svg>
                                     </div>
                                 </div>
                                 <h3 class="text-lg font-medium text-gray-800 mb-2">Atletas</h3>
                                 <p class="text-gray-500 text-sm flex-grow">Gestión de atletas</p>
-                                <span
-                                    class="mt-4 inline-flex items-center group-hover:underline text-sm" :style="{ color: '#008933' }">
+                                <span class="mt-4 inline-flex items-center group-hover:underline text-sm"
+                                    :style="{ color: '#008933' }">
                                     Acceder
-                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" :style="{ color: '#008933' }">
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        :style="{ color: '#008933' }">
                                         <!-- ... -->
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                        <!-- Competition -->
+                        <a href="/Competition" class="group block transition-all duration-200 hover:scale-[1.02]">
+                            <div
+                                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md h-full flex flex-col">
+                                <div class="flex items-center mb-4">
+                                    <div class="bg-yellow-50 p-3 rounded-full">
+                                        <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-medium text-gray-800 mb-2">Competiciones</h3>
+                                <p class="text-gray-500 text-sm flex-grow">Gestión de competiciones y torneos</p>
+                                <span class="mt-4 inline-flex items-center text-yellow-600 group-hover:underline text-sm">
+                                    Acceder
+                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7">
+                                        </path>
                                     </svg>
                                 </span>
                             </div>
@@ -302,5 +338,6 @@ import Navbar from '@/Components/Navbar.vue'
                 </div>
             </div>
         </div>
+        <Footer />
     </AuthenticatedLayout>
 </template>

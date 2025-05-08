@@ -1,12 +1,17 @@
 <template>
     <div class="search-container mb-4 flex flex-col sm:flex-row gap-4">
+        <label for="search-athlete" class="sr-only">Buscar por nombre o país</label>
         <input id="search-athlete" type="text" v-model="search" placeholder="Buscar por nombre o país..."
             class="px-4 py-2 border rounded-lg shadow-sm w-full sm:w-1/2" />
-        <select v-model="selectedSport" class="px-4 py-2 border rounded-lg shadow-sm">
+
+        <label for="select-sport" class="sr-only">Filtrar por deporte</label>
+        <select id="select-sport" v-model="selectedSport" class="px-4 py-2 border rounded-lg shadow-sm" aria-label="Filtrar por deporte">
             <option value="">Todos los deportes</option>
             <option v-for="sport in sports" :key="sport" :value="sport">{{ sport }}</option>
         </select>
-        <select v-model="selectedCountry" class="px-4 py-2 border rounded-lg shadow-sm">
+
+        <label for="select-country" class="sr-only">Filtrar por país</label>
+        <select id="select-country" v-model="selectedCountry" class="px-4 py-2 border rounded-lg shadow-sm" aria-label="Filtrar por país">
             <option value="">Todos los países</option>
             <option v-for="country in countries" :key="country" :value="country">{{ country }}</option>
         </select>
